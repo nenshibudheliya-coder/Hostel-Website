@@ -1,0 +1,1052 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shree Annapurna Girls Hostel</title>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Nunito:wght@300;400;600;700&display=swap"
+    rel="stylesheet">
+  <style>
+    :root {
+      --rose: #d4647a;
+      --rose-light: #f7c5cf;
+      --rose-dark: #a0364f;
+      --cream: #fdf8f2;
+      --gold: #c8a96e;
+      --gold-light: #f0e0b8;
+      --deep: #2c1a24;
+      --soft: #6e4d5e;
+      --white: #fff;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Nunito', sans-serif;
+      background: var(--cream);
+      color: var(--deep);
+      overflow-x: hidden;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 999;
+      background: rgba(44, 26, 36, 0.96);
+      backdrop-filter: blur(10px);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 14px 60px;
+      border-bottom: 2px solid var(--gold);
+    }
+
+    .nav-logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.5rem;
+      color: var(--gold);
+      letter-spacing: 1px;
+    }
+
+    .nav-logo span {
+      color: var(--rose-light);
+      font-style: italic;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 28px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: #e8d5dc;
+      font-size: 0.88rem;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      transition: color 0.3s;
+    }
+
+    .nav-links a:hover {
+      color: var(--gold);
+    }
+
+    /* ── HERO ── */
+    .hero {
+      height: 100vh;
+      background: linear-gradient(135deg, #2c1a24 0%, #5a2d40 50%, #2c1a24 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23c8a96e' fill-opacity='0.06'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    }
+
+    .hero-content {
+      text-align: center;
+      z-index: 1;
+      animation: fadeUp 1.2s ease;
+    }
+
+    .hero-tag {
+      display: inline-block;
+      background: var(--gold);
+      color: var(--deep);
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+      padding: 6px 18px;
+      border-radius: 30px;
+      margin-bottom: 20px;
+      text-transform: uppercase;
+    }
+
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.8rem, 6vw, 5rem);
+      color: var(--white);
+      line-height: 1.15;
+      margin-bottom: 10px;
+    }
+
+    .hero h1 em {
+      color: var(--rose-light);
+      font-style: italic;
+    }
+
+    .hero-sub {
+      font-size: 1.1rem;
+      color: #d6b8c4;
+      margin: 16px 0 36px;
+      font-weight: 300;
+      letter-spacing: 0.5px;
+    }
+
+    .hero-btns {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .btn-primary {
+      background: var(--rose);
+      color: #fff;
+      border: none;
+      padding: 14px 36px;
+      border-radius: 50px;
+      font-size: 0.95rem;
+      font-weight: 700;
+      cursor: pointer;
+      text-decoration: none;
+      transition: all 0.3s;
+      box-shadow: 0 6px 24px rgba(212, 100, 122, 0.4);
+    }
+
+    .btn-primary:hover {
+      background: var(--rose-dark);
+      transform: translateY(-3px);
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--gold);
+      border: 2px solid var(--gold);
+      padding: 14px 36px;
+      border-radius: 50px;
+      font-size: 0.95rem;
+      font-weight: 700;
+      cursor: pointer;
+      text-decoration: none;
+      transition: all 0.3s;
+    }
+
+    .btn-outline:hover {
+      background: var(--gold);
+      color: var(--deep);
+      transform: translateY(-3px);
+    }
+
+    .hero-flowers {
+      position: absolute;
+      font-size: 4rem;
+      opacity: 0.12;
+      animation: float 6s ease-in-out infinite;
+    }
+
+    .hero-flowers:nth-child(1) {
+      top: 12%;
+      left: 8%;
+      animation-delay: 0s;
+    }
+
+    .hero-flowers:nth-child(2) {
+      top: 20%;
+      right: 10%;
+      animation-delay: 2s;
+      font-size: 2.5rem;
+    }
+
+    .hero-flowers:nth-child(3) {
+      bottom: 15%;
+      left: 12%;
+      animation-delay: 4s;
+      font-size: 3rem;
+    }
+
+    .hero-flowers:nth-child(4) {
+      bottom: 20%;
+      right: 8%;
+      animation-delay: 1s;
+    }
+
+    /* ── SECTIONS ── */
+    section {
+      padding: 90px 60px;
+    }
+
+    .section-header {
+      text-align: center;
+      margin-bottom: 60px;
+    }
+
+    .section-tag {
+      display: inline-block;
+      color: var(--rose);
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+      color: var(--deep);
+      line-height: 1.2;
+    }
+
+    .section-title em {
+      color: var(--rose);
+      font-style: italic;
+    }
+
+    .section-line {
+      width: 60px;
+      height: 3px;
+      background: linear-gradient(90deg, var(--rose), var(--gold));
+      margin: 18px auto 0;
+      border-radius: 2px;
+    }
+
+    /* ── ABOUT ── */
+    .about {
+      background: var(--cream);
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    .about-img-wrap {
+      position: relative;
+    }
+
+    .about-img-box {
+      width: 100%;
+      height: 400px;
+      background: linear-gradient(135deg, #f7c5cf, #e8a8b8);
+      border-radius: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 6rem;
+      box-shadow: 16px 16px 0 var(--gold-light);
+      overflow: hidden;
+      position: relative;
+    }
+
+    .about-img-box::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, transparent 60%, rgba(44, 26, 36, 0.2));
+    }
+
+    .about-badge {
+      position: absolute;
+      bottom: -18px;
+      right: -18px;
+      background: var(--rose);
+      color: #fff;
+      padding: 18px 22px;
+      border-radius: 16px;
+      text-align: center;
+      font-weight: 700;
+      box-shadow: 0 8px 20px rgba(212, 100, 122, 0.4);
+    }
+
+    .about-badge strong {
+      display: block;
+      font-size: 1.8rem;
+    }
+
+    .about-text h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.9rem;
+      color: var(--deep);
+      margin-bottom: 16px;
+    }
+
+    .about-text p {
+      color: var(--soft);
+      line-height: 1.85;
+      margin-bottom: 14px;
+      font-size: 0.97rem;
+    }
+
+    .about-features {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 22px;
+    }
+
+    .feat-chip {
+      background: var(--rose-light);
+      color: var(--rose-dark);
+      padding: 7px 18px;
+      border-radius: 50px;
+      font-size: 0.82rem;
+      font-weight: 700;
+    }
+
+    /* ── FACILITIES GRID ── */
+    .facilities {
+      background: #f9f0f3;
+    }
+
+    .fac-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 28px;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .fac-card {
+      background: #fff;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 4px 20px rgba(44, 26, 36, 0.08);
+      transition: all 0.35s;
+      position: relative;
+    }
+
+    .fac-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 16px 40px rgba(212, 100, 122, 0.2);
+    }
+
+    .fac-img {
+      height: 200px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 4.5rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .fac-img-label {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      padding: 10px 14px;
+      background: linear-gradient(0deg, rgba(44, 26, 36, 0.7) 0%, transparent);
+      color: #fff;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    .fac-body {
+      padding: 22px 24px;
+    }
+
+    .fac-icon-row {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 10px;
+    }
+
+    .fac-icon {
+      font-size: 1.6rem;
+    }
+
+    .fac-body h4 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.15rem;
+      color: var(--deep);
+    }
+
+    .fac-body p {
+      color: var(--soft);
+      font-size: 0.87rem;
+      line-height: 1.7;
+    }
+
+    .fac-tag {
+      display: inline-block;
+      margin-top: 12px;
+      background: var(--gold-light);
+      color: var(--gold);
+      font-size: 0.75rem;
+      font-weight: 700;
+      padding: 4px 14px;
+      border-radius: 30px;
+    }
+
+    /* bg colors per card */
+    .bg-study {
+      background: linear-gradient(135deg, #e8f4f8, #c5dfe8);
+    }
+
+    .bg-lib {
+      background: linear-gradient(135deg, #f5f0e8, #e8d8b8);
+    }
+
+    .bg-bed {
+      background: linear-gradient(135deg, #f8e8ee, #f0c8d4);
+    }
+
+    .bg-cctv {
+      background: linear-gradient(135deg, #e8e8f4, #c8c8e8);
+    }
+
+    .bg-wifi {
+      background: linear-gradient(135deg, #e8f8f0, #b8e8d0);
+    }
+
+    .bg-gaz {
+      background: linear-gradient(135deg, #f0f8e8, #c8e8b8);
+    }
+
+    .bg-dine {
+      background: linear-gradient(135deg, #fff8e8, #f8e4b8);
+    }
+
+    .bg-rest {
+      background: linear-gradient(135deg, #f8eef8, #e8c8e8);
+    }
+
+    .bg-temple {
+      background: linear-gradient(135deg, #fff0e8, #f8d4b8);
+    }
+
+    /* ── STATS ── */
+    .stats {
+      background: linear-gradient(135deg, var(--deep), #4a2535);
+      padding: 70px 60px;
+      text-align: center;
+    }
+
+    .stats-grid {
+      display: flex;
+      justify-content: center;
+      gap: 0;
+      flex-wrap: wrap;
+      max-width: 900px;
+      margin: auto;
+    }
+
+    .stat-item {
+      flex: 1;
+      min-width: 160px;
+      padding: 30px 20px;
+      border-right: 1px solid rgba(200, 169, 110, 0.25);
+    }
+
+    .stat-item:last-child {
+      border-right: none;
+    }
+
+    .stat-num {
+      font-family: 'Playfair Display', serif;
+      font-size: 3rem;
+      color: var(--gold);
+      font-weight: 700;
+      display: block;
+    }
+
+    .stat-label {
+      color: #d6b8c4;
+      font-size: 0.85rem;
+      margin-top: 6px;
+      letter-spacing: 0.5px;
+    }
+
+    /* ── RULES ── */
+    .rules {
+      background: var(--cream);
+    }
+
+    .rules-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 28px;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    .rule-card {
+      background: #fff;
+      border-radius: 16px;
+      padding: 26px 28px;
+      border-left: 5px solid var(--rose);
+      box-shadow: 0 3px 16px rgba(44, 26, 36, 0.07);
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+    }
+
+    .rule-icon {
+      font-size: 1.8rem;
+      flex-shrink: 0;
+    }
+
+    .rule-card h5 {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--deep);
+      margin-bottom: 6px;
+    }
+
+    .rule-card p {
+      color: var(--soft);
+      font-size: 0.87rem;
+      line-height: 1.65;
+    }
+
+    /* ── CONTACT ── */
+    .contact {
+      background: linear-gradient(135deg, #f9f0f3, var(--cream));
+      text-align: center;
+    }
+
+    .contact-card {
+      max-width: 600px;
+      margin: auto;
+      background: #fff;
+      border-radius: 24px;
+      padding: 50px 40px;
+      box-shadow: 0 8px 40px rgba(212, 100, 122, 0.15);
+      border: 1px solid var(--rose-light);
+    }
+
+    .contact-icon {
+      font-size: 3rem;
+      margin-bottom: 16px;
+    }
+
+    .contact-card h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.7rem;
+      color: var(--deep);
+      margin-bottom: 10px;
+    }
+
+    .contact-card p {
+      color: var(--soft);
+      margin-bottom: 28px;
+      font-size: 0.95rem;
+    }
+
+    .contact-info {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .contact-row {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      background: var(--cream);
+      border-radius: 12px;
+      padding: 14px 20px;
+      text-align: left;
+    }
+
+    .contact-row .ci {
+      font-size: 1.4rem;
+    }
+
+    .contact-row .cl {
+      font-size: 0.8rem;
+      color: var(--rose);
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .contact-row .cv {
+      font-size: 0.95rem;
+      color: var(--deep);
+      font-weight: 600;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--deep);
+      color: #c8a8b8;
+      text-align: center;
+      padding: 30px 20px;
+      font-size: 0.85rem;
+    }
+
+    footer strong {
+      color: var(--gold);
+    }
+
+    /* ── ANIMATIONS ── */
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(40px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes float {
+
+      0%,
+      100% {
+        transform: translateY(0) rotate(0deg);
+      }
+
+      50% {
+        transform: translateY(-20px) rotate(10deg);
+      }
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 768px) {
+      nav {
+        padding: 12px 20px;
+      }
+
+      .nav-links {
+        display: none;
+      }
+
+      section {
+        padding: 60px 20px;
+      }
+
+      .about-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .rules-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .stats-grid {
+        gap: 0;
+      }
+
+      .stat-item {
+        border-right: none;
+        border-bottom: 1px solid rgba(200, 169, 110, 0.2);
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <div class="nav-logo">🌸 <span>Shree Annapurna</span> Girls Hostel</div>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#facilities">Facilities</a></li>
+      <li><a href="#rules">Rules</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-flowers">🌸</div>
+    <div class="hero-flowers">🌺</div>
+    <div class="hero-flowers">🌼</div>
+    <div class="hero-flowers">🌷</div>
+    <div class="hero-content">
+      <div class="hero-tag">✨ Safe · Comfortable · Homely</div>
+      <h1>Shree Annapurna<br><em>Girls Hostel</em></h1>
+      <p class="hero-sub">Where every girl feels at home — safe, clean, and happy</p>
+      <div class="hero-btns">
+        <a href="#facilities" class="btn-primary">🏠 View Facilities</a>
+        <a href="#contact" class="btn-outline">📞 Contact Us</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="about" id="about">
+    <div class="about-grid">
+      <div class="about-img-wrap">
+        <div class="about-img-box" style="background: url('https://i.ibb.co/XZ2KFtZ2/hostel.jpg') center/cover;"></div>
+        <div class="about-badge">
+          <strong>5★</strong>
+          Rating
+        </div>
+      </div>
+      <div class="about-text">
+        <div class="section-tag">🌸 About Us</div>
+        <h3>Your Second Home — Safe and Comfortable</h3>
+        <p>Shree Annapurna Girls Hostel is a premium girls-only residential facility that gives you a home-like
+          environment. We take full care of the safety, education, and health of every student living here.</p>
+        <p>Our hostel has 9 state-of-the-art facilities — from a Study Room to a Temple — so that you can nourish your
+          mind and soul along with your studies.</p>
+        <div class="about-features">
+          <span class="feat-chip">✅ 24/7 Security</span>
+          <span class="feat-chip">🍽️ Home-cooked Food</span>
+          <span class="feat-chip">📶 High-Speed WiFi</span>
+          <span class="feat-chip">🌿 Green Campus</span>
+          <span class="feat-chip">📚 Study Room</span>
+          <span class="feat-chip">🛕 Temple</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STATS -->
+  <section class="stats">
+    <div class="stats-grid">
+      <div class="stat-item">
+        <span class="stat-num">200+</span>
+        <div class="stat-label">Happy Residents</div>
+      </div>
+      <div class="stat-item">
+        <span class="stat-num">9</span>
+        <div class="stat-label">Premium Facilities</div>
+      </div>
+      <div class="stat-item">
+        <span class="stat-num">24/7</span>
+        <div class="stat-label">Security & Support</div>
+      </div>
+      <div class="stat-item">
+        <span class="stat-num">10+</span>
+        <div class="stat-label">Years of Trust</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FACILITIES -->
+  <section class="facilities" id="facilities">
+    <div class="section-header">
+      <div class="section-tag">🏡 Our Facilities</div>
+      <h2 class="section-title">Care for Every <em>Need</em></h2>
+      <div class="section-line"></div>
+    </div>
+
+    <div class="fac-grid">
+
+      <!-- Study Room -->
+      <div class="fac-card">
+        <div class="fac-img" style="background: url('https://i.ibb.co/FZjPMJG/studyroom.jpg') center/cover;">
+          <div class="fac-img-label">Study Room</div>
+        </div>
+        <div class="fac-body">
+          <div class="fac-icon-row">
+            <span class="fac-icon">📚</span>
+            <h4>Study Room</h4>
+          </div>
+          <p>An AC-equipped quiet study room where you can study without any disturbance. Facilities include individual
+            desks, proper lighting, and power sockets.</p>
+          <span class="fac-tag">🕐 24/7 Open</span>
+        </div>
+      </div>
+
+      <!-- Library -->
+      <div class="fac-card">
+        <div class="fac-img" style="background: url('https://i.ibb.co/LdzG4Bjx/library.jpg') center/cover;">
+          <div class="fac-img-label">Library</div>
+        </div>
+        <div class="fac-body">
+          <div class="fac-icon-row">
+            <span class="fac-icon">🔖</span>
+            <h4>Library</h4>
+          </div>
+          <p>A collection of 5000+ books — textbooks, novels, competitive exam guides, and magazines. A digital reading
+            corner is also available.</p>
+          <span class="fac-tag">📖 5000+ Books</span>
+        </div>
+      </div>
+
+      <!-- Bedroom -->
+      <div class="fac-card">
+        <div class="fac-img" style="background: url('https://i.ibb.co/tTwhkHHg/bedroom.jpg') center/cover;">
+          <div class="fac-img-label">Bedroom</div>
+        </div>
+        <div class="fac-body">
+          <div class="fac-icon-row">
+            <span class="fac-icon">🌙</span>
+            <h4>Bedroom</h4>
+          </div>
+          <p>Clean and airy rooms — Single, Double, and Triple sharing options are available. Amenities include a
+            mattress, almira, study table, and fan/AC.</p>
+          <span class="fac-tag">🛋️ Furnished</span>
+        </div>
+      </div>
+
+      <!-- CCTV -->
+      <div class="fac-card">
+        <div class="fac-img" style="background: url('https://i.ibb.co/Y4HCy729/security-cameras.jpg') center/cover;">
+          <div class="fac-img-label">CCTV Surveillance</div>
+        </div>
+        <div class="fac-body">
+          <div class="fac-icon-row">
+            <span class="fac-icon">🔐</span>
+            <h4>CCTV Security</h4>
+          </div>
+          <p>Over 40 HD CCTV cameras are installed throughout the hostel. 24/7 monitoring is actively maintained at
+            entry/exit points, corridors, and common areas.</p>
+          <span class="fac-tag">🔒 100% Secure</span>
+        </div>
+      </div>
+
+      <!-- WiFi -->
+      <div class="fac-card">
+        <div class="fac-img" style="background: url('https://i.ibb.co/whzPyz2k/Wifi.jpg') center/cover;">
+          <div class="fac-img-label">High-Speed WiFi</div>
+        </div>
+        <div class="fac-body">
+          <div class="fac-icon-row">
+            <span class="fac-icon">🌐</span>
+            <h4>High-Speed WiFi</h4>
+          </div>
+          <p>100 Mbps unlimited fiber internet — available in rooms, study areas, and common spaces. Absolutely perfect
+            for online classes, assignments, and entertainment.</p>
+          <span class="fac-tag">⚡ 100 Mbps</span>
+        </div>
+      </div>
+
+      <!-- Gazebo -->
+      <div class="fac-card">
+        <div class="fac-img" style="background: url('https://i.ibb.co/9JW9k8P/gazebo.jpg') center/cover;">
+          <div class="fac-img-label">Gazebo / Outdoor Area</div>
+        </div>
+        <div class="fac-body">
+          <div class="fac-icon-row">
+            <span class="fac-icon">🌳</span>
+            <h4>Gazebo (Outdoor)</h4>
+          </div>
+          <p>A beautiful gazebo situated in a lush green garden where you can relax, join a group study, or enjoy a cup
+            of tea by yourself or with friends.</p>
+          <span class="fac-tag">🌺 Peaceful Zone</span>
+        </div>
+      </div>
+
+      <!-- Dining Area -->
+      <div class="fac-card">
+        <div class="fac-img" style="background: url('https://i.ibb.co/dJbbLL2F/dining-area.jpg') center/cover;">
+          <div class="fac-img-label">Dining Area</div>
+        </div>
+        <div class="fac-body">
+          <div class="fac-icon-row">
+            <span class="fac-icon">🥘</span>
+            <h4>Dining Area</h4>
+          </div>
+          <p>A spacious and clean dining hall where pure, home-like vegetarian food is served. Breakfast, Lunch, Snacks,
+            and Dinner are provided daily.</p>
+          <span class="fac-tag">🥗 Pure Veg</span>
+        </div>
+      </div>
+
+      <!-- Rest Room -->
+      <div class="fac-card">
+        <div class="fac-img" style="background: url('https://i.ibb.co/N2vny66w/Bathroom.jpg') center/cover;">
+          <div class="fac-img-label">Washroom / Restroom</div>
+        </div>
+        <div class="fac-body">
+          <div class="fac-icon-row">
+            <span class="fac-icon">🚿</span>
+            <h4>Restroom / Washroom</h4>
+          </div>
+          <p>Both attached and common clean washrooms are available. Amenities include hot water geysers, hygienic
+            toiletries, and reliable daily housekeeping.</p>
+          <span class="fac-tag">🧼 Hygienic</span>
+        </div>
+      </div>
+
+      <!-- Temple -->
+      <div class="fac-card">
+        <div class="fac-img" style="background: url('https://i.ibb.co/2LNYXbH/temple.jpg') center/cover;">
+          <div class="fac-img-label">Temple / Mandir</div>
+        </div>
+        <div class="fac-body">
+          <div class="fac-icon-row">
+            <span class="fac-icon">🙏</span>
+            <h4>Temple / Mandir</h4>
+          </div>
+          <p>A beautiful and sacred temple lies right within the hostel premises where you can offer daily prayers.
+            Special poojas are organized during festivals.</p>
+          <span class="fac-tag">🕉️ Peaceful Vibes</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- RULES -->
+  <section class="rules" id="rules">
+    <div class="section-header">
+      <div class="section-tag">📋 Rules and Discipline</div>
+      <h2 class="section-title">Hostel <em>Rules</em></h2>
+      <div class="section-line"></div>
+    </div>
+    <div class="rules-grid">
+      <div class="rule-card">
+        <div class="rule-icon">🕙</div>
+        <div>
+          <h5>Curfew Timing</h5>
+          <p>All students must return to the hostel by 10:00 PM. Prior permission from the warden is required for late
+            entry.</p>
+        </div>
+      </div>
+      <div class="rule-card">
+        <div class="rule-icon">🚫</div>
+        <div>
+          <h5>No Boys Entry</h5>
+          <p>Male entry is strictly prohibited on the hostel premises. Visitors are only permitted up to the designated
+            reception area.</p>
+        </div>
+      </div>
+      <div class="rule-card">
+        <div class="rule-icon">🍃</div>
+        <div>
+          <h5>No Smoking / Alcohol</h5>
+          <p>Smoking, alcohol consumption, and any kind of intoxication are strictly prohibited in the hostel at all
+            times.</p>
+        </div>
+      </div>
+      <div class="rule-card">
+        <div class="rule-icon">🔇</div>
+        <div>
+          <h5>Silence Hours</h5>
+          <p>A silence zone must be maintained from 10:00 PM to 6:00 AM. Loud music or excessive noise is completely
+            forbidden.</p>
+        </div>
+      </div>
+      <div class="rule-card">
+        <div class="rule-icon">🧹</div>
+        <div>
+          <h5>Cleanliness</h5>
+          <p>Always keep your room and common areas neat and clean. It is everyone's responsibility to contribute to the
+            cleanliness of the hostel.</p>
+        </div>
+      </div>
+      <div class="rule-card">
+        <div class="rule-icon">📝</div>
+        <div>
+          <h5>Leave Permission</h5>
+          <p>It is mandatory to inform the Warden in advance before going out. Valid approval from parents is also
+            strictly required.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="contact" id="contact">
+    <div class="section-header">
+      <div class="section-tag">📞 Contact Us</div>
+      <h2 class="section-title">Get in <em>Touch</em></h2>
+      <div class="section-line"></div>
+    </div>
+    <div class="contact-card">
+      <div class="contact-icon">🌸</div>
+      <h3>Shree Annapurna Girls Hostel</h3>
+      <p>Contact us for admission or any other inquiries</p>
+      <div class="contact-info">
+        <div class="contact-row">
+          <span class="ci">📍</span>
+          <div>
+            <div class="cl">Address</div>
+            <div class="cv">123, Shanti Nagar, Near City College, Ahmedabad - 380001</div>
+          </div>
+        </div>
+        <div class="contact-row">
+          <span class="ci">📞</span>
+          <div>
+            <div class="cl">Phone / WhatsApp</div>
+            <div class="cv">+91 98765 43210 | +91 87654 32109</div>
+          </div>
+        </div>
+        <div class="contact-row">
+          <span class="ci">✉️</span>
+          <div>
+            <div class="cl">Email</div>
+            <div class="cv">info@annapurnagirls.com</div>
+          </div>
+        </div>
+        <div class="contact-row">
+          <span class="ci">🕐</span>
+          <div>
+            <div class="cl">Office Hours</div>
+            <div class="cv">Monday – Saturday: 9:00 AM – 6:00 PM</div>
+          </div>
+        </div>
+      </div>
+      <br>
+      <a href="tel:+919876543210" class="btn-primary" style="display:inline-block; margin-top:10px;">📞 Call Now</a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>© 2025 <strong>Shree Annapurna Girls Hostel</strong> — All Rights Reserved &nbsp;|&nbsp; Made with 🌸 for our
+      Residents</p>
+    <p style="margin-top:8px; font-size:0.8rem; opacity:0.6;">Safe · Hygienic · Homely · Trusted Since 2015</p>
+  </footer>
+
+</body>
+
+</html>
